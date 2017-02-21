@@ -1,0 +1,25 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{minted}
+\newmintedfile[cppcode]{cpp}{
+ breaklines,
+ mathescape,
+ linenos,
+ numbersep=5pt,
+ xleftmargin=0pt,
+ fontsize=\small
+ }
+\begin{document}
+\begin{listing}
+	\cppcode[firstline=1]{factorial.cpp}
+	\caption{minted displaying source code.}.
+	\label{lst:factorial}
+\end{listing}
+For the factorial program see listing \ref{lst:factorial}.
+
+\end{document}
+

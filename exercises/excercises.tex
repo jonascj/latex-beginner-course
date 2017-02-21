@@ -1,0 +1,234 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[top=2cm, bottom=4cm, left=3.5cm, right=3.5cm]{geometry}
+
+\setlength{\parskip}{15pt}
+\setlength{\parindent}{0pt}
+
+\usepackage{siunitx}
+
+\usepackage{multicol}
+
+\usepackage{amsmath}
+
+\usepackage{enumitem}
+
+\usepackage[english]{babel}
+
+\usepackage{lipsum}
+
+\usepackage{showexpl}
+
+% Assignment numbering
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{\parskip}{-\parskip}
+\titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+
+\newcommand{\diff}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\parti}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\dif}[0]{\mathrm{d}}
+\newcommand{\e}[1]{\mathrm{e}^{#1}}
+
+\renewcommand{\thesection}{\Roman{section}} 
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}} 
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}} 
+
+
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage[os=win]{menukeys}
+
+
+\title{{\LaTeX} exercises \#1}
+\author{Jonas Camillus Jeppesen \\ 
+	jonascj@sdu.dk\vspace{-15pt}}
+\date{\today}
+
+
+
+\begin{document}
+
+\maketitle
+\section{Basics}
+\subsection{Minimal document}
+Write a minimal .tex file which, when compiled, displays a title, author, date, and a few words of body text (e.g. ``Hello World'').
+
+\subsection{Non-ASCII characters}
+Write some non-ASCII characters in your document, e.g. ö, æ, Ø, é, ñ. This will require loading a few packages.
+
+\subsection{Paragraphs}
+Type a few paragraphs. Change the spacing and indentation of the paragraphs by changing the \verb!\parindent! and \verb!\parskip! lengths.
+
+\subsection{Sections and subsection}
+Add a few \emph{sections}, \emph{subsections} and \emph{subsubsections} to your document.
+
+\subsection{Lorem ipsum}
+Add some text to your sections, subsections, and subsubsections  using the \emph{lipsum} package. It will make the document look more like a real document!
+
+\subsection{Table of contents}
+Add a table of contents to your document on a page by itself  (typically after the title, author and date, but before any body text and sections).
+
+\section{Towards self-sufficiency}
+\subsection{Correct an error with help from the log.}
+Distributed with these exercises should be a LaTeX file called \emph{errors.tex}. Put that in a suitable location on your hard drive, open it in your LaTeX editor, and try to compile it. It contains two errors, and will fail compilation. Use your log to figure out what is wrong. The file is small enough that you might be able to figure it out without the log, but use the log anyway, since that is the point of the exercise. Use your editors built-in log viewer, or open \emph{errors.log}, located next to your errors.tex after an compilation attempt.
+
+\subsection{Table of contents on its own page}
+Use \emph{The Not So Short Guide to \LaTeX{}} to figure out how to make the table of contents appear on its own page.
+\url{https://tobi.oetiker.ch/lshort/lshort.pdf}
+
+\subsection{Change locale of your document}
+By default the heading produced  by \verb!\tableofcontents! is ``Contents'', and the date format outputted by \verb!\maketitle! is ``Month dd, yyyy''. Both the heading and the format are English/American. Figure out how to change them to Danish (or any other language of your choosing).
+
+\section{Math I}
+\subsection{Basics}
+Typeset the following mathematical expressions, paying attention to spacing and \textit{italics}. I.e. in the expression $\log(x)$, $\log$ should not be italic, but $x$ should. You have not yet seen how to typeset $\leq$, but it should not be too hard to lookup.
+\begin{multicols}{2}
+\noindent
+\begin{equation}
+\left(\frac{a}{b}\right)^2 = \frac{a^2}{b^2}
+\end{equation}
+\begin{equation}
+\sin^2(\theta) + \cos^2(\theta) = 1
+\end{equation}
+\begin{equation}
+\int_a^b\int_c^d f(x,y) \, \mathrm{d} x \, \mathrm{d} y
+\end{equation}
+\begin{equation}
+F = m\frac{\mathrm{d}^2 x}{\mathrm{d}t^2}
+\end{equation}
+\begin{equation}
+z \leq x+y
+\end{equation}
+\begin{equation}
+\sqrt{9\pi^2} = 3\pi
+\end{equation}
+\end{multicols}
+
+
+\section{Labels and references}
+\subsection{Reference a section}
+Pick one of your sections, subsections, or subsubsections, and make a reference to it somewhere in your document. Use \verb!\label! and \verb!\ref!. Good labels for sections are \verb!sec:somesection!.
+
+\subsection{Reference an equation}
+Pick one of your sections, subsections, or subsubsections, and make a reference to it somewhere in your document. Use \verb!\label! and \verb!\ref!. Good labels for equations are \verb!eq:someequation!.
+
+\subsection{Pager number of a reference}
+Use \verb!\pageref! to get the page number of a reference, e.g. typeset ``Eq. (x) on page y is \ldots ''.
+
+\section{Custom commands}
+\subsection{Easier references}
+Define a new command call \verb!\eqref! which will typeset ``eq. (x)'', where x is your equation number, when you call it like \verb!\eqref{x}!.
+
+\subsection{Easier differentiation}
+Define a new command called \verb!\diff! which will typeset this 
+\begin{equation}
+	\frac{\mathrm{d}^2}{\mathrm{d} x^2}
+\end{equation}
+when called as \verb!\diff{x}! in mathmode (i.e. between \verb!$$!, or between \verb!\begin{equation}! and \verb!\end{equation}!).
+
+
+
+\section{Math II}
+\subsection{Align equations}
+Typeset the following equations so they align, one equal sign above the other:
+\begin{align}
+	2x+4y &= 8 \label{eq:xy} \\
+	2x &= 8-4y \\
+	x &= \frac{8-4y}{2} \\
+	x &= 4-2y \label{eq:xy2}
+\end{align}
+
+\subsection{Numbering equations}
+Make it such that only equation (\ref{eq:xy}) and (\ref{eq:xy2}) are numbered in the previous exercise. Note that your numbers will probably be different.
+
+\subsection{Matrices}
+Typeset the following matrix (called the \emph{rotation matrix}):
+\begin{equation*}
+R =
+\begin{bmatrix}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta \\
+\end{bmatrix}
+\end{equation*}
+Try exchanging \verb!bmatrix! with \verb!pmatrix! and/or \verb!vmatrix!.
+
+\subsection{Cases}
+Typeset the piece-wise function
+\begin{equation*}
+ f(x) =
+  \begin{cases}
+   \sin{x} & \text{if } x \leq 0 \\
+   2x       & \text{if } x > 0
+  \end{cases}
+\end{equation*}
+
+\section{Units}
+Typeset the following units:
+\begin{itemize}
+	\item The gas constant,  $[R] = \si{\joule\per\mole\per\kelvin}$
+	\item Joule, $\si{\joule} = \si{\newton\meter} = \si{\kilogram\meter\squared\per\second\squared}$
+\end{itemize} 
+Typeset them both with exponents (like above), and with fractions (like $\frac{a}{b}$).
+
+\section{Lists}
+\subsection{Bullet lists}
+Make a bullet list, e.g.:
+\begin{itemize}
+	\item Item 1
+	\item Item 2
+	\begin{itemize}
+		\item Subitem 2, 1
+		\item Subitem 2, 2
+	\end{itemize}
+	\item Item 3
+\end{itemize}
+
+\subsection{Numbered list}
+Make a numbered list, e.g.:
+\begin{enumerate}
+	\item Apples
+	\item Bananas
+	\item Strawberries
+\end{enumerate}
+
+\subsection{List with custom item labels }
+\subsubsection{}
+Make a list with custom item labels, e.g.:
+\begin{description}
+	\item[Food] Cake, chicken, banana, bread, etc.
+	\item[Drink] Milk, water, beer, wine, milk, etc.
+	\item[Furniture] Table, chair, etc.
+\end{description}
+\subsubsection{}
+Make the actual description, e.g. ``Table, chair, etc.'', appear on a line below the label.
+
+\section{Tables}
+Make a table with $x = {1,2,3,4}$, corresponding $x^2$, and a top row with labels $x$ and $x^2$ (i.e. two columns, 5 rows).
+
+\section{Graphics}
+\subsection{Single figure}
+Add sine.pdf to your document as a figure, and give it a caption. Use the options for \verb!\includegraphics! to trim the figure and adjust its width.
+
+\subsection{Multiple figures (subfigures)}
+Add sine.pdf and cosine.pdf as two subfigures of the same figure. Give each of them a caption, and the whole figure another caption.
+
+\subsection{Float placement.}
+Make a document with a few figures and a lot of text using the \verb!lipsum! package. Now play around with placement modifies on your figures. Try \verb!\begin{figure}[x]! with \verb!x! as h, t, p, and H (H requires the float package).
+
+
+\section{Bibliography}
+\subsection{Minimal example}
+Create a minimal example which cites a reference (maybe a book), and lists that reference in a bibliography. You will need a \verb!.bib! file with the item you want to cite (e.g. \verb!@book!), and a \verb!.tex! file which use a citation command and include the bibliography.
+
+
+\subsection{More references}
+Add more references to your \verb!.bib! file, e.g. \verb!@article!, and cite them in your document.
+
+\subsection{Bibliography style}
+Try some different bibliography styles and see how changing style changes how the citation appear in your text, and how the references appear in the bibliography.
+
+\end{document}

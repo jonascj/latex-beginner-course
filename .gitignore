@@ -1,0 +1,7 @@
+*
+
+!.gitignore
+!*.tex
+!*/
+!presentation/figs/*
+!exercises/figs/*

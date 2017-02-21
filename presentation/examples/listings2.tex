@@ -1,0 +1,29 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{listings}
+\lstset{ 
+	basicstyle=\small,
+	breaklines=true,
+    captionpos=b, 
+    belowskip=0pt,
+	numbers=right,
+	numbersep=5pt,
+	numberstyle=\small,   
+	language=C++
+    }
+\begin{document}
+\lstinputlisting[language=C++, 
+                 numbers=left,
+                 caption=listings displaying source code,
+                 label=lst:factorial]
+                 {factorial.cpp}
+
+For the factorial program see listing \ref{lst:factorial}.
+
+
+\end{document}
+

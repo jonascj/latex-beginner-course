@@ -1,0 +1,27 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\title{A \LaTeX{} document}
+\author{Jonas C. J.}
+\usepackage{amsmath}
+
+\usepackage{siunitx}
+\begin{document}
+\noindent Manual units:
+\begin{align*}
+\left[F\right] &= N = kgms^{-2} \\
+\left[F\right] &= \mathrm{N} = \mathrm{kg} \, \mathrm{m} \, \mathrm{s}^{-2}
+\end{align*}
+Units using the \verb!siunitx! package:
+\begin{align*}
+\left[F\right] &= \si{\newton} = \si{\kilogram\meter\per\second\squared} \\
+\left[F\right] &= \si{\newton} = \si[per-mode=symbol]
+{\kilogram\meter\per\second\squared} \\
+\left[F\right] &= \si{\newton} = \si[per-mode=fraction]
+{\kilogram\meter\per\second\squared}
+\end{align*}
+
+\end{document}

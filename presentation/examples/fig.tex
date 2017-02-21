@@ -1,0 +1,23 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\title{A \LaTeX{} document}
+\author{Jonas C. J.}
+
+\usepackage{graphicx}
+\begin{document}
+\begin{figure}
+\begin{center}
+	\includegraphics
+	[width=0.8\textwidth,
+	clip=true,
+	trim=2cm 5cm 2cm 1cm]{sine.pdf}
+   %trim=l   b   r   t
+\end{center}   
+	\caption{$f(x) = \sin(x)$}.
+\end{figure}
+
+\end{document}

@@ -1,0 +1,25 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\title{A \LaTeX{} document}
+\author{Jonas C. J.}
+
+\usepackage{amsmath}
+\begin{document}
+\noindent Careless / sloppy math: 
+\begin{equation}
+	\int_a^b f(x)dx 
+	= (\frac{1}{2}
+	sin(x)\sqrt{x})^2
+\end{equation}
+Beautiful math:
+\begin{equation}
+	\int_a^b f(x) \, \mathrm{d} x
+	= \left(\frac{1}{2}
+	\sin(x)\sqrt{x}\right)^2
+\end{equation}
+
+\end{document}

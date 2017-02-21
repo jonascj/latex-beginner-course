@@ -1,0 +1,126 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[top=3cm, bottom=4cm, left=3.5cm, right=3.5cm]{geometry}
+
+\setlength{\parskip}{15pt}
+
+\usepackage[english]{babel}
+
+\usepackage{listings}
+
+\lstset{
+  language=bash,
+  basicstyle=\ttfamily,
+  frame=,
+  keepspaces=true,
+  columns=fullflexible,
+  linewidth=0.9\linewidth,
+  xleftmargin=0.1\linewidth
+}
+
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\usepackage[os=win]{menukeys}
+
+
+\title{How to ``install'' \LaTeX}
+\author{Jonas Camillus Jeppesen \\ 
+	jonascj@sdu.dk\vspace{-15pt}}
+\date{\today}
+
+
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+{\LaTeX} is a document preparation system. Given some document specification by the user (you), it produces a document suitable for distribution, typically a PDF file. To use {\LaTeX} to prepare documents you need two pieces of software:
+\begin{itemize}
+	\item A text editor to type your text and {\LaTeX} commands, and save it as a plain text file with \verb!.tex! extension.
+	\item A {\TeX} distribution which provides the tools that convert the \verb!.tex! files into PDF documents.
+\end{itemize} 
+On Linux and Windows we will be using \emph{TeXworks} as editor and \emph{TeX Live} as {\TeX} distribution. On Mac (OS X) we will be using \emph{TeXShop} as editor and \emph{MacTeX} as {\TeX} distribution.
+
+See Section \ref{sec:windows} for Windows installation instructions, Section \ref{sec:linux} for Linux instructions, and Section \ref{sec:mac} for Mac (OS X) instructions.
+
+\section{Windows}
+\label{sec:windows}
+\begin{enumerate}
+	\item Download \url{http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe}
+	\item Run the downloaded \verb!install-tl-windows.exe!.
+	\item Accept all default settings by repeatedly pressing [Next] until you can finally press [Install].
+	\item Verify that you can now open the \emph{TeXworks} editor.
+\end{enumerate}
+
+\section{Linux}
+\label{sec:linux}
+\subsection{Using your distro's package manager}
+If your distro features a GUI for package management, or a ``software center'', you can just search for \emph{texlive} and \emph{texworks}, and install them using that GUI.
+
+You can also use your distro's command-line utility for package management. For example:
+\begin{description}
+	\item[Debian based (e.g. Ubuntu):] \hfill \\ 
+\begin{lstlisting}
+$ apt-get install texlive-full texworks
+\end{lstlisting}
+	
+	\item[Fedora:] \hfill \\
+\begin{lstlisting}
+$ yum install texlive-scheme-full texworks
+\end{lstlisting}	
+\end{description}
+Remember that it might require elevated permissions to install software (obtain root privileges using \lstinline|sudo| or \lstinline|su -c|, if necessary).
+
+Verify that you can open the \emph{TeXworks} editor, and, if you know how to, verify that \lstinline|pdflatex -v| is recognized and gives output in a terminal.
+
+\subsection{Manually using the TeX Live install script}
+If your distro does not have TeX Live prepackaged, or you would like the absolute newest version of TeX Live, you can install it manually using the TeX Live installation script:
+\begin{enumerate}
+	\item Download \url{http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz}
+	\item Unpack the downloaded archive
+\begin{lstlisting}
+$ tar -xzvf install-tl-unx.tar.gz
+\end{lstlisting}	
+
+	\item Run the install script in the newly unpacked directory, e.g.
+\begin{lstlisting} 
+$ ./install-tl-20150411/install-tl
+\end{lstlisting}
+
+	\item \label{itm:symlinks} (Optional) If you don't want to modify your \verb!PATH! after installation you should activate the option \emph{create symlinks to standard directories}. In the TUI type \verb!O! (followed by \keys{\return}) to enter \emph{Options}. Type \verb!L! to activate the symlinks-option. Accept the defaults for \verb!bin!, \verb!man!, and \verb!info!, or modify them if you want. Finally type \verb!R! to return to the main menu.
+	
+	\item Type \verb!I! followed by \keys{\return} to start the installation.
+	
+	\item Add the paths suggested by the installer to your \verb!PATH! environment variable. Skip if you did item \ref{itm:symlinks}.
+
+
+	\item Install \emph{TeXworks} using your package manager. 
+		\begin{description}
+			\item[Debian based (e.g. Ubuntu):] \hfill \\ 
+\begin{lstlisting}
+$ apt-get install texworks
+\end{lstlisting}
+	
+			\item[Fedora:] \hfill \\
+\begin{lstlisting}
+$ yum install texworks
+\end{lstlisting}	
+		\end{description}
+		
+	\item Verify that you can open the \emph{TeXworks} editor, and that \lstinline|pdflatex -v| is recognized and gives output in a terminal.		
+\end{enumerate}
+
+
+\section{Mac (OS X)}
+\label{sec:mac}
+\begin{enumerate}
+	\item Download \url{http://mirror.ctan.org/systems/mac/mactex/MacTeX.pkg}
+	\item Install MacTeX by opening the downloaded MacTeX.pkg package.
+	\item Accept all default settings by repeatedly pressing [Continue], and a single [Agree], until you can finally press [Install].
+	\item Verify that you can now open the \emph{TeXShop} editor.
+\end{enumerate}
+\end{document}

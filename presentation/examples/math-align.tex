@@ -1,0 +1,27 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\title{A \LaTeX{} document}
+\author{Jonas C. J.}
+
+\usepackage{amsmath}
+\newcommand{\numberthis}[0]{ \addtocounter{equation}{1} \tag{\theequation} }
+\begin{document}
+% align* does not number equations per default
+\begin{align*}
+3y - 2x &= 6 \label{eq:xy}\numberthis \\
+3y &= 6+2x \\
+y &= \frac{6+2x}{3} \label{eq:y} \numberthis
+\end{align*}
+Solving eq. (\ref{eq:xy}) for $y$ gives eq. (\ref{eq:y}).
+% align numbers equations per default
+\begin{align}
+3y - 2x &= 6 \\
+3y &= 6+2x \nonumber  \\
+y &= \frac{6+2x}{3}
+\end{align}
+
+\end{document}

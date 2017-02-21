@@ -1,0 +1,27 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{lipsum}
+
+\title{A \LaTeX{} document}
+\author{Jonas C. J.}
+
+\begin{document}
+\maketitle
+\section{Classical mechanics}
+Eq. (\ref{eq:newton2}) is called Newton's Second Law. 
+
+In section \ref{sec:actionreaction} on page \pageref{sec:actionreaction} we will learn about Newton's Third Law.
+
+\subsection{Equation of motion}
+\begin{equation}
+\label{eq:newton2}
+F=ma
+\end{equation}
+\lipsum[1-18]
+
+\subsection{Action and Reaction}
+\label{sec:actionreaction}
+To every action there is always opposed an equal reaction:\end{document}

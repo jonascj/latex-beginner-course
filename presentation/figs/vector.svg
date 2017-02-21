@@ -1,0 +1,16 @@
+<svg height="400" width="450">
+<path d="M 100 350 q 200 -200 200 0" stroke="blue" stroke-width="2" fill="#dfdfdf" />
+
+<!-- Mark relevant points -->
+<g stroke="black" stroke-width="3" fill="black">
+
+<circle id="point1" cx="100" cy="350" r="2" />
+
+<circle id="point2" cx="300" cy="350" r="2" />
+</g>
+
+<g font-size="30" font="sans-serif" fill="black" stroke="none" text-anchor="middle">
+
+<text x="260" y="320" dx="-40">M</text>
+</g>
+</svg>

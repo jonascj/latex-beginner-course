@@ -1,0 +1,26 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{minted}
+\begin{document}
+Hello World in C++:
+\begin{minted}[linenos,breaklines]{cpp}
+// Hello-World in C++
+#include <iostream>
+int main()
+{
+  std::cout << "Hello World!";
+}
+\end{minted}
+
+Recursive factorial in C++:
+\inputminted[firstline=3, 
+             lastline=8, 
+             linenos,
+             breaklines]{cpp}{factorial.cpp}
+
+\end{document}
+
